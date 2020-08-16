@@ -38,7 +38,7 @@ class TableroPeonBlanco(Tablero):
    
    #RETORNAR EL TABLERO DEL PEON BLANCO
    def obtenerTablero(self) -> str:
-       return "Peon blanco \n" + Tablero.obtenerTablero(self)
+       return "Peón blanco \n" + Tablero.obtenerTablero(self)
         
 
 #CLASE TABLERO PEON NEGRO QUE HEREDA DE TABLERO
@@ -61,7 +61,7 @@ class TableroPeonNegro(Tablero):
            
    #RETORNAR EL TABLERO DEL PEON NEGRO
    def obtenerTablero(self) -> str:
-       return "Peon negro \n" + Tablero.obtenerTablero(self)
+       return "Peón negro \n" + Tablero.obtenerTablero(self)
 
 #CLASE TABLERO CABALLO QUE HEREDA DE TABLERO
 class TableroCaballo(Tablero):
