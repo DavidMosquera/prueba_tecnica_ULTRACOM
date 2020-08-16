@@ -14,6 +14,10 @@ class Tablero(object):
     def simularMovimientos(self):
         pass
     
+    #EN ESTA CLASE EL METODO PARA OBTENER EL TABLERO
+    def obtenerTablero(self) -> str:
+        return str(self.distribucion)
+    
 #CLASE TABLERO PEON BLANCO QUE HEREDA DE TABLERO
 class TableroPeonBlanco(Tablero):
    #CONSTRUCTOR DEL TABLERO CON LA FICHA PEON BLANCO
@@ -31,6 +35,11 @@ class TableroPeonBlanco(Tablero):
            #EL PEON PUEDE MOVERSE UNICAMENTE HACIA ADELANTE 
            #(DESDE EL PUNTO DE VISTA DEL PEON BLANCO)
            self.distribucion[self.filaFicha-1][self.columnaFicha] = 1
+   
+   #RETORNAR EL TABLERO DEL PEON BLANCO
+   def obtenerTablero(self) -> str:
+       return "Peón blanco \n" + Tablero.obtenerTablero(self)
+        
 
 #CLASE TABLERO PEON NEGRO QUE HEREDA DE TABLERO
 class TableroPeonNegro(Tablero):
@@ -49,7 +58,11 @@ class TableroPeonNegro(Tablero):
            #EL PEON PUEDE MOVERSE UNICAMENTE HACIA ADELANTE 
            #(DESDE EL PUNTO DE VISTA DEL PEON NEGRO)
            self.distribucion[self.filaFicha+1][self.columnaFicha] = 1
-    
+           
+   #RETORNAR EL TABLERO DEL PEON NEGRO
+   def obtenerTablero(self) -> str:
+       return "Peón negro \n" + Tablero.obtenerTablero(self)
+
 #CLASE TABLERO CABALLO QUE HEREDA DE TABLERO
 class TableroCaballo(Tablero):
    #CONSTRUCTOR DEL TABLERO CON LA FICHA CABALLO
@@ -68,7 +81,7 @@ class TableroCaballo(Tablero):
            if(self.filaFicha>0):
                self.distribucion[self.filaFicha-1][derecha] = 1
            #MOVIMIENTO DERECHA ABAJO
-           if(self.filaFicha<self.distribucion.shape[0]):
+           if(self.filaFicha<self.distribucion.shape[0]-1):
                self.distribucion[self.filaFicha+1][derecha] = 1
        #MOVIMIENTOS A LA IZQUIERDA
        if(izquierda >= 0):
@@ -76,7 +89,7 @@ class TableroCaballo(Tablero):
            if(self.filaFicha>0):
                self.distribucion[self.filaFicha-1][izquierda] = 1
            #MOVIMIENTO A LA IZQUIERDA ABAJO
-           if(self.filaFicha<self.distribucion.shape[0]):
+           if(self.filaFicha<self.distribucion.shape[0]-1):
                self.distribucion[self.filaFicha+1][izquierda] = 1
        #MOVIMIENTOS HACIA ABAJO
        if(abajo < self.distribucion.shape[0]):
@@ -84,7 +97,7 @@ class TableroCaballo(Tablero):
            if(self.columnaFicha>0):
                self.distribucion[abajo][self.columnaFicha-1] = 1
            #MOVIMIENTO ABAJO DERECHA
-           if(self.filaFicha<self.distribucion.shape[1]):
+           if(self.columnaFicha<self.distribucion.shape[1]-1):
                self.distribucion[abajo][self.columnaFicha+1] = 1
        #MOVIMIENTOS HACIA ARRIBA
        if(arriba >= 0):
@@ -92,8 +105,11 @@ class TableroCaballo(Tablero):
            if(self.columnaFicha>0):
                self.distribucion[arriba][self.columnaFicha-1] = 1
            #MOVIMIENTO ARRIBA DERECHA
-           if(self.filaFicha<self.distribucion.shape[1]):
+           if(self.columnaFicha<self.distribucion.shape[1]-1):
                self.distribucion[arriba][self.columnaFicha+1] = 1
+   #RETORNAR EL TABLERO CABALLO
+   def obtenerTablero(self) -> str:
+       return "Caballo \n" + Tablero.obtenerTablero(self)
      
 #CLASE TABLERO ALFIL QUE HEREDA DE TABLERO
 class TableroAlfil(Tablero):
@@ -141,7 +157,9 @@ class TableroAlfil(Tablero):
                self.distribucion[filaArribaDerecha][columnaArribaDerecha] = 1
            if(filaAbajoDerecha < self.distribucion.shape[0] and columnaAbajoDerecha < self.distribucion.shape[1]):
                self.distribucion[filaAbajoDerecha][columnaAbajoDerecha] = 1
-               
+   #RETORNAR EL TABLERO ALFIL
+   def obtenerTablero(self) -> str:
+       return "Alfil \n" + Tablero.obtenerTablero(self)        
                
 #CLASE TABLERO TORRE QUE HEREDA DE TABLERO
 class TableroTorre(Tablero):
@@ -181,7 +199,10 @@ class TableroTorre(Tablero):
                self.distribucion[self.filaFicha][izquierda] = 1
            if(derecha < self.distribucion.shape[1]):
                self.distribucion[self.filaFicha][derecha] = 1
-           
+    #RETORNAR EL TABLERO TORRE
+   def obtenerTablero(self) -> str:
+       return "Torre \n" + Tablero.obtenerTablero(self)   
+   
 #CLASE TABLERO REY QUE HEREDA DE TABLERO
 class TableroRey(Tablero):
    #CONSTRUCTOR DEL TABLERO CON LA FICHA REY
@@ -216,6 +237,10 @@ class TableroRey(Tablero):
        #IZQUIERDA
        if(self.columnaFicha>0):
            self.distribucion[self.filaFicha][self.columnaFicha-1] = 1
+    
+   #RETORNAR EL TABLERO REY
+   def obtenerTablero(self) -> str:
+       return "Rey \n" + Tablero.obtenerTablero(self)    
 
 #CLASE TABLERO REINA QUE HEREDA DEl REY, TORRE Y ALFIL
 class TableroReina(TableroRey, TableroTorre, TableroAlfil):
@@ -232,4 +257,11 @@ class TableroReina(TableroRey, TableroTorre, TableroAlfil):
        TableroAlfil.simularMovimientos(self)
        #TABLERO TORRE
        TableroTorre.simularMovimientos(self)
+       
+       
+   #RETORNAR EL TABLERO REINA
+   def obtenerTablero(self) -> str:
+       return "Reina \n" + Tablero.obtenerTablero(self)  
+   
+
     
