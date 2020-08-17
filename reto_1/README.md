@@ -20,7 +20,7 @@ Para implementar el simulador de posiciones se diseñó el siguiente diagrama de
 
 ![alt text](https://github.com/DavidMosquera/prueba_tecnica_ULTRACOM/blob/v4_reto2/reto_1/uml_clases.png)
 
-Las clases ubicadas en el scrpit 'modelo.py' se implementan siguiendo el modelo anterior. Luego, se realiza la conexión entre el modelo y la vista del usuario utilizando un controlador ubicado en el script 'controlador.py'. Finalmente se implementa la vista en el script 'vista.py' donde se muestran los resultados de cada simulación al usuario utilizando interfaces de tkinter. El resultado de la implementación se muestra en la siguiente imagen: 
+Las clases ubicadas en el scrpit 'modelo.py' se implementan siguiendo el modelo anterior. Luego, se realiza la conexión entre el modelo y la vista del usuario utilizando un controlador ubicado en el script 'controlador.py'. Finalmente se implementa la vista en el script 'vista.py' donde se muestran los resultados de cada simulación al usuario utilizando interfaces de tkinter. El resultado de ejecutar el script 'main.py' se muestra en la siguiente imagen: 
 
 ![alt text](https://github.com/DavidMosquera/prueba_tecnica_ULTRACOM/blob/v4_reto2/reto_1/resultado_caso_de_prueba.png)
 
