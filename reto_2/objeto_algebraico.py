@@ -89,3 +89,4 @@ if __name__ == "__main__":
     #       f(x) = -16x^3 + 29x^2 + 78x + 23
     objetoAlgebraico.sumar(ObjetoAlgebraico([1,2,3]))
     print("Polinomio luego de sumar g(x) = x^2 + 2x + 3:\n",objetoAlgebraico.polinomio)
+    input("Presione enter para cerrar...")
