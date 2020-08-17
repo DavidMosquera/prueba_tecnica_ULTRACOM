@@ -24,4 +24,6 @@ se implementan a través de los objetos poly1d de numpy. Además, se permite rea
 operaciones suma, resta y multiplicación entre objetos algebraicos. 
 
 Finalmente, el script 'objeto_algebraico.py' puede ejecutarse para desplegar un caso de prueba
-donde se muestra el funcionamiento de cada una de las operaciones. 
+donde se muestra el funcionamiento de cada una de las operaciones. Los resultados de este caso de prueba se muestran en la siguiente imagen:
+
+![alt text](https://github.com/DavidMosquera/prueba_tecnica_ULTRACOM/blob/v4_reto2/reto_2/caso_de_prueba.png)
